@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainAttakActivity">
+
+    <TextView
+        android:id="@+id/tv_data"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="нормлаьная работа: получите разрешение и увидите данные\nдля атаки нажмите кнопку:)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_getdata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get nicks"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_getpermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="get permission"
+        android:onClick="onRequestPermission"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_attak"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="time to attak"
+
+        android:onClick="onAttak"
+        app:layout_constraintBottom_toTopOf="@+id/btn_getdata"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

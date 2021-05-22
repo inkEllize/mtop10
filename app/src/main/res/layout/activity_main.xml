@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#abc"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="13"
+        android:shadowDy="13"
+        android:shadowRadius="6"
+        android:text="OWASP\nMOBILE TOP 10!"
+        android:textColor="#3f6"
+        android:textSize="46sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:importantForContentCapture="yes"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startExportedActivity"
+
+            android:text="start exported activity" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startActivity2"
+            android:text="start act" />
+
+        <Button
+            android:id="@+id/btn_show_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showContentProvider"
+            android:text="show content provider data" />
+
+        <Button
+            android:id="@+id/btn_db_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="db_example"
+            android:text="DB example" />
+        <Button
+            android:id="@+id/btn_files_example"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="files_example"
+            android:text="Files Example" />
+
+        <TextView
+            android:id="@+id/tv_emulator"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:textColor="#f34"
+            android:textStyle="bold"
+            android:shadowDx="2"
+            android:shadowDy="3"
+            android:shadowColor="#aef"
+            android:shadowRadius="5"
+            android:text="EMULATOR!" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
