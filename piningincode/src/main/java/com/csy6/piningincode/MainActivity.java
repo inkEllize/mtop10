@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
 //                    .add("api.bittrex.com","sha1/EWMPxCflWvtlz495t/J4T+PhrxU=")
 //                    .add("api.bittrex.com","sha1/y7iiBZmicrnRgIhWxM+aqVAvJng=")
                     .add("api.bittrex.com","sha1/oGVC7DZs7c5IQE71jLPctp1Yie0=") // bittrex
-
                     .build();
             client = new OkHttpClient();
             client.setCertificatePinner(certificatePinner);

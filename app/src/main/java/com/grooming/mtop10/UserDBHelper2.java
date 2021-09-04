@@ -3,6 +3,7 @@ package com.grooming.mtop10;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Build;
 
 import androidx.annotation.Nullable;
 
@@ -37,6 +38,7 @@ public class UserDBHelper2 extends SQLiteOpenHelper {
     }
 
     public void OpenReadOnlyDB(){
+//        Build
         if(database!=null && database.isOpen()){
             if(database.isReadOnly()){
                 return;

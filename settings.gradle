@@ -1,3 +1,4 @@
+include ':reversetask'
 include ':forreverse'
 include ':jetsecexample'
 include ':taskaffinity2'

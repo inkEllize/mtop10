@@ -70,7 +70,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+
         setContentView(R.layout.activity_main);
+//        View v = findViewById(R.id.editTextTextPersonName);
+//        v.
         Log.d("task", "MTOP10: " + getTaskId());
         Log.d("guard check", "message from log.d");
         int d = Log.d("guard check", "message from log.d");
@@ -140,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("aaa", "fjgkfdkd");
         intent.putExtra("id", 13456);
         intent.putExtra("v2", "dfkl;dsf");
+        intent.putExtra("p1", "parameter1");
+        intent.putExtra("p2", "parameter2");
+
         intent.setData(Uri.parse("very secret string"));
         startActivity(intent);
         ////////////////////////
