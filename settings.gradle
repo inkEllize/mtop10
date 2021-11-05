@@ -1,3 +1,5 @@
+include ':somecrypto'
+include ':okhttpcache'
 include ':reversetask'
 include ':forreverse'
 include ':jetsecexample'

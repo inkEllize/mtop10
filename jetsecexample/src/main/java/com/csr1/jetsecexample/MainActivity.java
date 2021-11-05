@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 //                        .setUserAuthenticationParameters(15, KeyProperties.AUTH_DEVICE_CREDENTIAL)
                         .setUserAuthenticationValidityDurationSeconds(15)
 //                        .setUnlockedDeviceRequired(true)
-//                        .setIsStrongBoxBacked(true)
+                        .setIsStrongBoxBacked(true)
                         .build();
 
 

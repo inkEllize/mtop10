@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
                 e.printStackTrace();
+                Log.wtf("aaaa","OOOO");
             }
         }
         return false;

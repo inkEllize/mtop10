@@ -46,7 +46,7 @@ public class DBActivity extends AppCompatActivity {
         cursor.close();
     }
     void getIDData(){
-        Uri uri = Uri.parse("content://"+TemporaryContentProvider.AUTHORITY+"/"+UserDBHelper.TABLE+"/2");
+        Uri uri = Uri.parse("content://"+TemporaryContentProvider.AUTHORITY+"/"+UserDBHelper2.TABLE+"/2");
         TextView textView = findViewById(R.id.tv_data);
         Cursor cursor = getContentResolver().query(uri,null,null,null,null);
         while (cursor.moveToNext()){

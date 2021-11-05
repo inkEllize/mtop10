@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -13,7 +14,8 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+//'v' or '1=1' union select * from users2 where name='v' or '1=1
+//'v' or '1=1' union select * from users2 where name='v' or '1=1 - same to provider
 public class DbUsingActivity extends AppCompatActivity {
     TextView tvForData;
     EditText edName;
@@ -77,9 +79,10 @@ public class DbUsingActivity extends AppCompatActivity {
 
                 cursor = database.query(UserDBHelper2.TABLE, null, String.format("name='%s'", name), null, null, null, null);
 
-            else if (case_ == R.id.rb_verybad)
-
+            else if (case_ == R.id.rb_verybad) {
                 cursor = database.rawQuery("SELECT * FROM users WHERE name = '" + name + "'", null);
+                Log.d("sql", "extractByNameData: " + "SELECT * FROM users WHERE name = '" + name + "'");
+            }
 
 
             else if(case_ == R.id.rb_norm)
@@ -87,7 +90,7 @@ public class DbUsingActivity extends AppCompatActivity {
                 cursor = database.query(UserDBHelper2.TABLE, null, "name=?", new String[]{name}, null, null, null);
 
             else {
-                Uri uri = Uri.parse("content://"+TemporaryContentProvider.AUTHORITY+"/"+UserDBHelper.TABLE+"/"+name);
+                Uri uri = Uri.parse("content://"+TemporaryContentProvider.AUTHORITY+"/"+UserDBHelper2.TABLE+"/"+name);
                 cursor = getContentResolver().query(uri,null,null,null,null);
             }
 

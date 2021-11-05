@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void get(View view) {
+
         if(client == null) client = new OkHttpClient();
+
         client.newCall(makeRequest()).enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {

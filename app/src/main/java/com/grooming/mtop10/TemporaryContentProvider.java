@@ -23,10 +23,10 @@ public class TemporaryContentProvider extends ContentProvider {
 
     static {
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI(AUTHORITY, UserDBHelper.TABLE, WHOLE_TABLE);
-        uriMatcher.addURI(AUTHORITY, UserDBHelper.TABLE + "/#", TABLE_ROW);
-        uriMatcher.addURI(AUTHORITY, UserDBHelper.TABLE + "/nicks", ONLY_NICKS);
-        uriMatcher.addURI(AUTHORITY, UserDBHelper.TABLE + "/names/*", BY_NAME);
+        uriMatcher.addURI(AUTHORITY, UserDBHelper2.TABLE, WHOLE_TABLE);
+        uriMatcher.addURI(AUTHORITY, UserDBHelper2.TABLE + "/#", TABLE_ROW);
+        uriMatcher.addURI(AUTHORITY, UserDBHelper2.TABLE + "/nicks", ONLY_NICKS);
+        uriMatcher.addURI(AUTHORITY, UserDBHelper2.TABLE + "/names/*", BY_NAME);
     }
 
     public TemporaryContentProvider() {
@@ -54,7 +54,7 @@ public class TemporaryContentProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        UserDBHelper dbHelper = new UserDBHelper(getContext());
+        UserDBHelper2 dbHelper = new UserDBHelper2(getContext());
         db = dbHelper.getWritableDatabase();
         return db != null;
     }
@@ -66,17 +66,17 @@ public class TemporaryContentProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             case WHOLE_TABLE:
                 Log.d("cp","all");
-                return db.query(UserDBHelper.TABLE, projection, selection, selectionArgs, null, null, sortOrder);
+                return db.query(UserDBHelper2.TABLE, projection, selection, selectionArgs, null, null, sortOrder);
             case TABLE_ROW:
                 Log.d("cp","id");
-                return db.query(UserDBHelper.TABLE, projection, UserDBHelper.C_ID+"="+uri.getLastPathSegment(),null, null, null, sortOrder);
+                return db.query(UserDBHelper2.TABLE, projection, UserDBHelper2.C_ID+"="+uri.getLastPathSegment(),null, null, null, sortOrder);
             case ONLY_NICKS:
                 Log.d("cp","nicks");
-                return db.query(UserDBHelper.TABLE, new String[]{UserDBHelper.C_NICK}, selection, selectionArgs, null, null, sortOrder);
+                return db.query(UserDBHelper2.TABLE, new String[]{UserDBHelper2.C_NICK}, selection, selectionArgs, null, null, sortOrder);
             case BY_NAME:
                 Log.d("cp","id");
 
-                return db.query(UserDBHelper.TABLE, projection, UserDBHelper.C_NAME+"='"+uri.getLastPathSegment()+"'",null, null, null, sortOrder);
+                return db.query(UserDBHelper2.TABLE, projection, UserDBHelper2.C_NAME+"='"+uri.getLastPathSegment()+"'",null, null, null, sortOrder);
 
             default:
                 throw new IllegalArgumentException("unknown URI " + uri);
