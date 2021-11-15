@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE bomb [
+    <!ENTITY a "hello, little fella!">
+    <!ENTITY b "&a;&a;&a;&a;&a;&a;&a;&a;&a;">
+    <!ENTITY c "&b;&b;&b;&b;&b;&b;&b;&b;&b;"><!ENTITY d "&c;&c;&c;&c;&c;&c;&c;&c;&c;">
+    ]>
+
+<bomb>&d;</bomb>
+

@@ -1,3 +1,4 @@
+
 <resources>
     <string name="app_name">MTOP10</string>
     <string name="db_hint">very bad:\n\tname\'or \'1=1\nbad:\n\tname\'or \'1=1\nnorm:\n\t—\nprovider:\n\tnames/vasya\'or \'1=1</string>

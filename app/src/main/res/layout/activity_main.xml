@@ -81,6 +81,13 @@
             android:onClick="files_example"
             android:text="Files Example" />
 
+        <Button
+            android:id="@+id/btn_toxml"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="toXML"
+            android:text="to xml" />
+
         <TextView
             android:id="@+id/tv_emulator"
             android:layout_margin="16dp"
@@ -95,6 +102,26 @@
             android:shadowColor="#aef"
             android:shadowRadius="5"
             android:text="EMULATOR!" />
+        <TextView
+            android:id="@+id/tv_issu"
+            android:layout_margin="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="#f38"
+            android:textStyle="bold"
+            android:shadowDx="6"
+            android:shadowDy="6"
+            android:shadowColor="#aef"
+            android:shadowRadius="8"
+            android:text="SU exists!" />
+        <ImageButton
+            android:id="@+id/ib_fingerprint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="fingeClick"
+            app:srcCompat="@drawable/fingerprint_dialog_fp_icon" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
